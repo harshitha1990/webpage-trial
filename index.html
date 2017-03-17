@@ -1,0 +1,21 @@
+<html>
+    <title>
+	
+    </title>
+    <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
+	<script type="text/javascript" src="./static/main.js"></script>
+    </head>
+    <body>
+	<div id="demo">
+	    <div v-for="n in 4">
+		<some-component :n="n"></some-component>
+	    </div>
+	</div>
+
+	<script id="component_template" type="x-template">
+	 <div>Component {{n}}</div>
+	</script>
+    </body>
+</html>
