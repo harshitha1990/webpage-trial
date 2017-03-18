@@ -112,7 +112,7 @@ $(function() {
 		}
 		$(".thumbnail-item:nth-child(1)").addClass("hightlight-thumbnail");
 
-		setInterval(hightlightThumbnail, 1000);
+		setInterval(hightlightThumbnail, 2000);
 	    }
 	}
     });
