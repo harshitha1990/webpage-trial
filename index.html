@@ -3,19 +3,85 @@
 	
     </title>
     <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
-	<script type="text/javascript" src="./static/main.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script> -->
+	<script type="text/javascript" src="./static/jquery.js"></script>
+	<script type="text/javascript" src="./static/vue.js"></script>
+	 <script type="text/javascript" src="./static/main.js"></script>
     </head>
     <body>
-	<div id="demo">
-	    <div v-for="n in 4">
-		<some-component :n="n"></some-component>
+	<!-- <div id="main-container">
+	     <div v-for="n in 4">
+	     <some-component :n="n"></some-component>
+	     </div>
+	     </div>
+
+	     <script id="component_template" type="x-template">
+	     <div>Component {{n}}</div>
+	     </script> -->
+	<div id="main-container">
+	    <div class="top-container">
+		<div class="slideshow-container">
+		    <slideshow-component></slideshow-component>
+		</div>
+		<div class="news-container">
+		</div>
+	    </div>
+	    <div class="bottom-container">
+		<div class="container-one">
+		</div>
+		<div class="container-two">
+		</div>
+		<div class="container-three">
+		</div>
 	    </div>
 	</div>
 
-	<script id="component_template" type="x-template">
-	 <div>Component {{n}}</div>
-	</script>
+	    <script id="slideshow-component" type="x-template">
+		<div class="slideshow">
+	            <div class="main-pic">Hi
+	            </div>
+	            <div class="thumbnails">
+			<div v-for="i in images" class="thumbnail-item">
+			    <img :src="path+i.imgName"/>
+			    <div class="thumbnail-title-container">
+				<div v-text="i.title" class="thumbnail-title">
+				</div>
+			    </div>
+			</div>
+		    </div>
+		</div>
+	    </script>
     </body>
 </html>
+<style>
+ body {
+     margin: 0px;
+ }
+ .slideshow .main-pic{
+     height: 75%;
+ }
+ .slideshow .thumbnails {
+     display: flex;
+     justify-content: space-between;
+     height: 25%;
+ }
+ .thumbnail-item{
+     display: flex;
+     flex-direction: column;
+     width: 24%;
+ }
+ .thumbnail-item img {
+     height: 60%;
+ }
+ .thumbnail-title-container {
+     display: table;
+     height: 40%;
+ }
+ .thumbnail-title{
+     display: table-cell;
+     vertical-align: middle;
+ }
+ 
+</style>
+

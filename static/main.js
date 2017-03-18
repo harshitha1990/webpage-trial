@@ -38,20 +38,62 @@
 //     }
 // });
 $(function() {
-Vue.component('some-component', {
-    props: ['n'],
-    template: '#component_template',
-    ready: function() {
-      this.on_some_event();
-    },
-    methods: {
-       on_some_event: function() {
-       	  console.log('Component: ' + this.n);
-       }
-    }
+    // Vue.component('some-component', {
+    // 	props: ['n'],
+    // 	template: '#component_template',
+    // 	ready: function() {
+    // 	    this.on_some_event();
+    // 	},
+    // 	methods: {
+    // 	    on_some_event: function() {
+    //    		console.log('Component: ' + this.n);
+    // 	    }
+    // 	}
+    // });
+
+    Vue.component('slideshow-component', {
+	template: '#slideshow-component',
+	ready: function() {
+	    this.on_some_event();
+	},
+	data: function() {
+	    return {
+		path: './static/images/',
+		images: [
+		    {
+			imgName: '1.jpg',
+			title: 'Building 1',
+			description: "Buildings are tall"  
+		    },
+		    {
+			imgName: '2.jpg',
+			title: 'Building 2',
+			description: "Buildings are tall"  
+		    },
+		    {
+			imgName: '3.jpg',
+			title: 'Building 3',
+			description: "Buildings are tall"  
+		    },
+		    {
+			imgName: '4.jpg',
+			title: 'Building 4',
+			description: "Buildings are tall"  
+		    },
+		]
+	    }
+	},
+	methods: {
+	    on_some_event: function() {
+       		console.log('Component: ' + this.n);
+	    },
+	    getImages: function() {
+		return this.images;
+	    }
+	}
+    });
+    
+    var demo = new Vue({
+	el: '#main-container'
+    });
 });
-            
-var demo = new Vue({
-  el: '#demo'
-});
-})
