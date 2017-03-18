@@ -62,12 +62,12 @@ $(function() {
 		images: [
 		    {
 			imgName: '1.jpg',
-			title: 'Building 1',
+			title: 'Building 1111111',
 			description: "Buildings are tall"  
 		    },
 		    {
 			imgName: '2.jpg',
-			title: 'Building 2222222222222222222',
+			title: 'Building 2222222',
 			description: "Buildings are tall"  
 		    },
 		    {
