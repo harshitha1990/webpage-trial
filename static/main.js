@@ -54,7 +54,7 @@ $(function() {
     Vue.component('slideshow-component', {
 	template: '#slideshow-component',
 	ready: function() {
-	    this.on_some_event();
+	    this.startSlideShow();
 	},
 	data: function() {
 	    return {
@@ -84,11 +84,35 @@ $(function() {
 	    }
 	},
 	methods: {
-	    on_some_event: function() {
-       		console.log('Component: ' + this.n);
-	    },
-	    getImages: function() {
-		return this.images;
+	    startSlideShow: function() {
+		var self = this;
+		var thumbnailsLength = self.images.length;
+		var removeIterator = 0;
+		var addIterator = 1;
+       		var hightlightThumbnail = function() {
+		    if (addIterator === thumbnailsLength || addIterator === 0) {
+			addIterator = 1;
+		    } else {
+			addIterator += 1;
+		    }
+
+		    if (addIterator === 1) {
+			removeIterator = thumbnailsLength;
+		    } else {
+			removeIterator = addIterator - 1;
+		    }	     
+		    $(".thumbnail-item:nth-child(" + removeIterator + ")").removeClass("hightlight-thumbnail");
+		    $(".thumbnail-item:nth-child(" + addIterator + ")").addClass("hightlight-thumbnail");
+		    var imgName = $(".thumbnail-item:nth-child(" + addIterator + ") img").attr("src");
+		    $(".main-pic").html("");
+		    $(".main-pic").append("<img src='" + imgName +"'/>");
+		}
+		var firstImageName = $(".thumbnail-item:nth-child(1) img").attr("src");
+
+		$(".main-pic img").attr('src', firstImageName);
+		$(".thumbnail-item:nth-child(1)").addClass("hightlight-thumbnail");
+
+		setInterval(hightlightThumbnail, 1000);
 	    }
 	}
     });
