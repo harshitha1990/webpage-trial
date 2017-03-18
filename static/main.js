@@ -77,7 +77,7 @@ $(function() {
 		    }	     
 		    $(".thumbnail-item:nth-child(" + removeIterator + ")").removeClass("hightlight-thumbnail");
 		    $(".thumbnail-item:nth-child(" + addIterator + ")").addClass("hightlight-thumbnail");
-		    self.currentImage = self.images[addIterator-1];
+		    self.currentimage = self.images[addIterator-1];
 		}
 		$(".thumbnail-item:nth-child(1)").addClass("hightlight-thumbnail");
 
