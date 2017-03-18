@@ -53,40 +53,9 @@ $(function() {
 
     Vue.component('slideshow-component', {
 	template: '#slideshow-component',
+	props: ["images", "currentimage", "path"],
 	ready: function() {
 	    this.startSlideShow();
-	},
-	data: function() {
-	    return {
-		path: './static/images/',
-		images: [
-		    {
-			imgName: '1.jpg',
-			title: 'Building 1111111',
-			description: "Buildings are tall"  
-		    },
-		    {
-			imgName: '2.jpg',
-			title: 'Building 2222222',
-			description: "Buildings are tall"  
-		    },
-		    {
-			imgName: '3.jpg',
-			title: 'Building 3',
-			description: "Buildings are tall"  
-		    },
-		    {
-			imgName: '4.jpg',
-			title: 'Building 4',
-			description: "Buildings are tall"  
-		    },
-		],
-		currentImage: {
-		    imgName: '1.jpg',
-		    title: 'Building 1111111',
-		    description: "Buildings are tall"  
-		}
-	    }
 	},
 	methods: {
 	    startSlideShow: function() {
@@ -118,6 +87,38 @@ $(function() {
     });
     
     var demo = new Vue({
-	el: '#main-container'
+	el: '#main-container',
+	data: function() {
+	    return {
+		images: [
+		    {
+			imgName: '1.jpg',
+			title: 'Building 1111111',
+			description: 'Buildings are tall'  
+		    },
+		    {
+			imgName: '2.jpg',
+			title: 'Building 2222222',
+			description: 'Buildings are tall'
+		    },
+		    {
+			imgName: '3.jpg',
+			title: 'Building 3',
+			description: 'Buildings are tall'
+		    },
+		    {
+			imgName: '4.jpg',
+			title: 'Building 4',
+			description: 'Buildings are tall'
+		    },
+		],
+		path: './static/images/'
+	    }
+	},
+	methods: {
+	    getDefaultImage: function() {
+		return this.images[0];
+	    }
+	}
     });
 });

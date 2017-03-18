@@ -22,7 +22,12 @@
 	<div id="main-container">
 	    <div class="top-container">
 		<div class="slideshow-container">
-		    <slideshow-component></slideshow-component>
+		    <slideshow-component :images="images"
+					 :currentimage="getDefaultImage()"
+					 :path="path"
+		    >
+			
+		    </slideshow-component>
 		</div>
 		<div class="news-container">
 		</div>
@@ -40,10 +45,10 @@
 	<script id="slideshow-component" type="x-template">
 	    <div class="slideshow">
 	        <div class="main-pic">
-		    <img :src="path+currentImage['imgName']"/>
+		    <img :src="path+currentimage['imgName']"/>
 		    <div class="main-pic-description">
-			<div v-text="currentImage['title']"></div>
-			<div v-text="currentImage['description']"></div>
+			<div v-text="currentimage['title']"></div>
+			<div v-text="currentimage['description']"></div>
 		    </div>
 		</div>
 	        <div class="thumbnails">
