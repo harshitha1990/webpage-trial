@@ -37,29 +37,49 @@
 	    </div>
 	</div>
 
-	    <script id="slideshow-component" type="x-template">
-		<div class="slideshow">
-	            <div class="main-pic">Hi
-	            </div>
-	            <div class="thumbnails">
-			<div v-for="i in images" class="thumbnail-item">
-			    <img :src="path+i.imgName"/>
-			    <div class="thumbnail-title-container">
-				<div class="thumbnail-title" v-text="i.title">
-				</div>
+	<script id="slideshow-component" type="x-template">
+	    <div class="slideshow">
+	        <div class="main-pic">
+		    <img :src="path+'1.jpg'"/>
+		    <div class="main-pic-description">
+			<div v-text="images[0]['title']"></div>
+			<div v-text="images[0]['description']"></div>
+		    </div>
+		</div>
+	        <div class="thumbnails">
+		    <div v-for="i in images" class="thumbnail-item">
+			<img :src="path+i.imgName"/>
+			<div class="thumbnail-title-container">
+			    <div class="thumbnail-title" v-text="i.title">
 			    </div>
 			</div>
 		    </div>
 		</div>
-	    </script>
+	    </div>
+	</script>
     </body>
 </html>
 <style>
  body {
      margin: 0px;
+     background-color: red;
+
+ }
+ .slideshow {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
  }
  .slideshow .main-pic{
      height: 75%;
+ }
+ .slideshow .main-pic img {
+     height: 75%;
+     width: 100%;
+ }
+ .slideshow .main-pic-description{
+     height: 24%;
+     background-color: white;
  }
  .slideshow .thumbnails {
      display: flex;
@@ -77,12 +97,13 @@
  .thumbnail-title-container {
      display: table;
      height: 40%;
+     background-color: white;
  }
  .thumbnail-title {
      display: table-cell;
      vertical-align: middle;
      width: 24%;
      text-align: center;
- } 
+ }
 </style>
 
