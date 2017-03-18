@@ -40,10 +40,10 @@
 	<script id="slideshow-component" type="x-template">
 	    <div class="slideshow">
 	        <div class="main-pic">
-		    <img :src="path+'1.jpg'"/>
+		    <img :src="path+currentImage['imgName']"/>
 		    <div class="main-pic-description">
-			<div v-text="images[0]['title']"></div>
-			<div v-text="images[0]['description']"></div>
+			<div v-text="currentImage['title']"></div>
+			<div v-text="currentImage['description']"></div>
 		    </div>
 		</div>
 	        <div class="thumbnails">
@@ -113,7 +113,7 @@
      padding-left: 2%;
  }
  .hightlight-thumbnail {
-     border: 2px solid red;
+     border: 3px solid #5ffc96;
  }
 </style>
 

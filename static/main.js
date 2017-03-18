@@ -80,7 +80,12 @@ $(function() {
 			title: 'Building 4',
 			description: "Buildings are tall"  
 		    },
-		]
+		],
+		currentImage: {
+		    imgName: '1.jpg',
+		    title: 'Building 1111111',
+		    description: "Buildings are tall"  
+		}
 	    }
 	},
 	methods: {
@@ -103,13 +108,8 @@ $(function() {
 		    }	     
 		    $(".thumbnail-item:nth-child(" + removeIterator + ")").removeClass("hightlight-thumbnail");
 		    $(".thumbnail-item:nth-child(" + addIterator + ")").addClass("hightlight-thumbnail");
-		    var imgName = $(".thumbnail-item:nth-child(" + addIterator + ") img").attr("src");
-		    $(".main-pic").html("");
-		    $(".main-pic").append("<img src='" + imgName +"'/>");
+		    self.currentImage = self.images[addIterator-1];
 		}
-		var firstImageName = $(".thumbnail-item:nth-child(1) img").attr("src");
-
-		$(".main-pic img").attr('src', firstImageName);
 		$(".thumbnail-item:nth-child(1)").addClass("hightlight-thumbnail");
 
 		setInterval(hightlightThumbnail, 1000);
