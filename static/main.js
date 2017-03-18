@@ -67,7 +67,7 @@ $(function() {
 		    },
 		    {
 			imgName: '2.jpg',
-			title: 'Building 2',
+			title: 'Building 2222222222222222222',
 			description: "Buildings are tall"  
 		    },
 		    {
