@@ -103,94 +103,72 @@ $(function() {
 		images: [
 		    {
 			imgName: '1.jpg',
-			title: 'Building 1111111',
-			description: 'Buildings are tall'  
+			title: 'First picture',
+			description: 'This image talks about nature'  
 		    },
 		    {
 			imgName: '2.jpg',
-			title: 'Building 2222222',
-			description: 'Buildings are tall'
+			title: 'Second picture',
+			description: 'This image talks about mountains'
 		    },
 		    {
 			imgName: '3.jpg',
-			title: 'Building 3',
-			description: 'Buildings are tall'
+			title: 'Third picture',
+			description: 'This image talks about tower'
 		    },
 		    {
 			imgName: '4.jpg',
-			title: 'Building 4',
-			description: 'Buildings are tall'
+			title: 'Fourth picture',
+			description: 'This image talks about tall buildings'
 		    },
 		],
 		tabsOne: ["tab1", "tab2", "tab3", "tab4"],
 		tabsTwo: ['1.jpg', '2.jpg'],
-		tabsThree: [
-		    {
-			title: "tab1",
-			imgName: "1.jpg",
-			description: "Hello"
-		    },
-		    {
-			title: "tab2",
-			imgName: "1.jpg",
-			description: "Hello"
-		    },
-		    {
-			title: "tab3",
-			imgName: "1.jpg",
-			description: "Hello"
-		    },
-		    {
-			title: "tab4",
-			imgName: "1.jpg",
-			description: "Hello"
-		    }
-		],
 		news: [
 		    {
-			title: "tab1",
-			imgName: "1.jpg",
-			description: "Hello"
+			imgName: '1.jpg',
+			title: 'First picture',
+			description: 'This image talks about nature'  
 		    },
 		    {
-			title: "tab2",
-			imgName: "1.jpg",
-			description: "Hello"
+			imgName: '2.jpg',
+			title: 'Second picture',
+			description: 'This image talks about mountains'
 		    },
 		    {
-			title: "tab3",
-			imgName: "1.jpg",
-			description: "Hello"
+			imgName: '3.jpg',
+			title: 'Third picture',
+			description: 'This image talks about tower'
 		    },
 		    {
-			title: "tab4",
-			imgName: "1.jpg",
-			description: "Hello"
+			imgName: '4.jpg',
+			title: 'Fourth picture',
+			description: 'This image talks about tall buildings'
 		    },
 		     {
-			title: "tab1",
-			imgName: "1.jpg",
-			description: "Hello"
+			imgName: '1.jpg',
+			title: 'First picture',
+			description: 'This image talks about nature'  
 		    },
 		    {
-			title: "tab2",
-			imgName: "1.jpg",
-			description: "Hello"
+			imgName: '2.jpg',
+			title: 'Second picture',
+			description: 'This image talks about mountains'
 		    },
 		    {
-			title: "tab3",
-			imgName: "1.jpg",
-			description: "Hello"
+			imgName: '3.jpg',
+			title: 'Third picture',
+			description: 'This image talks about tower'
 		    },
 		    {
-			title: "tab4",
-			imgName: "1.jpg",
-			description: "Hello"
+			imgName: '4.jpg',
+			title: 'Fourth picture',
+			description: 'This image talks about tall buildings'
 		    },
-		     {
-			title: "tab4",
-			imgName: "1.jpg",
-			description: "Hello"
+		    {
+			imgName: '4.jpg',
+			title: 'Fourth picture',
+			description: 'This image talks about tall buildings'
 		    }
 		],
 		path: './static/images/'
