@@ -88,7 +88,7 @@ $(function() {
 
     Vue.component('one-component', {
 	template: '#one-component',
-	props: ["tabs"],
+	props: ["tabs", "showdropdown"],
 	ready: function() {
 	    this.startSlideShow();
 	},
@@ -141,6 +141,7 @@ $(function() {
 		],
 		tabsOne: ["tab1", "tab2", "tab3", "tab4"],
 		tabsTwo: ['1.jpg', '2.jpg'],
+		tabsThree: ["tab1", "tab2", "tab3", "tab4","tab5", "tab6", "tab7", "tab8"],
 		path: './static/images/'
 	    }
 	},

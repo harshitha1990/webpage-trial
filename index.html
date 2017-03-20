@@ -20,7 +20,7 @@
 	     <div>Component {{n}}</div>
 	     </script> -->
 	<div id="main-container">
-	    <div class="top-container separate-areas">
+	    <div class="top-container">
 		<div class="slideshow-container">
 		    <slideshow-component :images="images"
 					 :currentimage="getDefaultImage()"
@@ -33,14 +33,18 @@
 		</div>
 	    </div>
 	    <div class="bottom-container">
-		<div class="container-one separate-areas">
-		    <one-component :tabs="tabsOne"></one-component>
+		<div class="container-one">
+		    <one-component :tabs="tabsOne" :showdropdown="false">
+		    </one-component>
 		</div>
 		<div class="container-two">
 		    <two-component :tabs="tabsTwo"
-				   :path="path"></two-component>
+				   :path="path">
+			
+		    </two-component>
 		</div>
 		<div class="container-three">
+		    <one-component :tabs="tabsThree" :showdropdown="true"></one-component>
 		</div>
 	    </div>
 	</div>
@@ -155,6 +159,7 @@
  .one-tabs {
      display: flex;
      justify-content: space-between;
+     flex-wrap: wrap;
  }
 
  .one-tabs .one-tab-item {
@@ -162,6 +167,7 @@
      background-color: white;
      display: table;
      height: 10%;
+     margin-top: 5px;
  }
 
  .one-tabs .one-tab-item div{
@@ -175,10 +181,18 @@
      display: flex;
      justify-content: space-between;
  }
- 
+
+ .two-tabs .two-tab-item {
+     width: 49.5%;
+ }
  .two-tabs .two-tab-item img{
-     width: 99.5%;
+     width: 100%;
      height:35%;
+ }
+
+ .container-three .one-tab-item {
+     background-color: black;
+     color: white;
  }
  
 </style>
