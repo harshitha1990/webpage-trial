@@ -22,12 +22,12 @@
 	<div id="main-container">
 	    <div class="top-container">
 		<div class="slideshow-container">
-		    <!-- <slideshow-component :images="images"
-			 :currentimage="getDefaultImage()"
-			 :path="path"
-			 > 
+		    <slideshow-component :images="images"
+					 :currentimage="getDefaultImage()"
+					 :path="path"
+		    > 
 			
-		    </slideshow-component>-->
+		    </slideshow-component>
 		</div>
 		<div class="news-container">
 		</div>
@@ -43,25 +43,25 @@
 	    </div>
 	</div>
 
-	<!-- <script id="slideshow-component" type="x-template">
-	     <div class="slideshow">
-	     <div class="main-pic">
-	     <img :src="path+currentimage['imgName']"/>
-	     <div class="main-pic-description">
-	     <div v-text="currentimage['title']"></div>
-	     <div v-text="currentimage['description']"></div>
-	     </div>
-	     </div>
-	     <div class="thumbnails">
-	     <div v-for="i in images" class="thumbnail-item">
-	     <img :src="path+i.imgName"/>
-	     <div class="thumbnail-title-container">
-	     <div class="thumbnail-title" v-text="i.title"></div>
-	     </div>
-	     </div>
-	     </div>
-	     </div>
-	     </script> -->
+	<script id="slideshow-component" type="x-template">
+	 <div class="slideshow">
+	 <div class="main-pic">
+	 <img :src="path+currentimage['imgName']"/>
+	 <div class="main-pic-description">
+	 <div v-text="currentimage['title']"></div>
+	 <div v-text="currentimage['description']"></div>
+	 </div>
+	 </div>
+	 <div class="thumbnails">
+	 <div v-for="i in images" class="thumbnail-item">
+	 <img :src="path+i.imgName"/>
+	 <div class="thumbnail-title-container">
+	 <div class="thumbnail-title" v-text="i.title"></div>
+	 </div>
+	 </div>
+	 </div>
+	 </div>
+	</script>
 
 	<script id="one-component" type="x-template">
 	    <div class="one-tabs">
@@ -80,6 +80,13 @@
  }
 
  /* slideshow */
+ .top-container {
+     height: 50%;
+     margin-bottom: 5px;
+ }
+ .bottom-container {
+     height: 50%;
+ }
  .slideshow {
      display: flex;
      flex-direction: column;
@@ -125,7 +132,7 @@
  }
  .main-pic-description div{
      box-sizing: border-box;
-     padding-top: 1%;
+     padding-top: .5%;
      padding-left: 2%;
  }
  .hightlight-thumbnail {
@@ -139,10 +146,10 @@
  }
 
  .one-tabs .tab-item {
-     width: 24%;
+     width: 24.5%;
      background-color: white;
      display: table;
-     height: 5%;
+     height: 10%;
  }
 
  .one-tabs .tab-item div{
