@@ -85,6 +85,19 @@ $(function() {
 	    }
 	}
     });
+
+    Vue.component('one-component', {
+	template: '#one-component',
+	props: ["tabs"],
+	ready: function() {
+	    this.startSlideShow();
+	},
+	methods: {
+	    startSlideShow: function() {
+		// alert("worked!!!");
+	    }
+	}
+    });
     
     var demo = new Vue({
 	el: '#main-container',
@@ -112,6 +125,7 @@ $(function() {
 			description: 'Buildings are tall'
 		    },
 		],
+		tabsOne: ["tab1", "tab2", "tab3", "tab4"],
 		path: './static/images/'
 	    }
 	},

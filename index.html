@@ -22,18 +22,19 @@
 	<div id="main-container">
 	    <div class="top-container">
 		<div class="slideshow-container">
-		    <slideshow-component :images="images"
-					 :currentimage="getDefaultImage()"
-					 :path="path"
-		    >
+		    <!-- <slideshow-component :images="images"
+			 :currentimage="getDefaultImage()"
+			 :path="path"
+			 > 
 			
-		    </slideshow-component>
+		    </slideshow-component>-->
 		</div>
 		<div class="news-container">
 		</div>
 	    </div>
 	    <div class="bottom-container">
 		<div class="container-one">
+		    <one-component :tabs="tabsOne"></one-component>
 		</div>
 		<div class="container-two">
 		</div>
@@ -42,22 +43,30 @@
 	    </div>
 	</div>
 
-	<script id="slideshow-component" type="x-template">
-	    <div class="slideshow">
-	        <div class="main-pic">
-		    <img :src="path+currentimage['imgName']"/>
-		    <div class="main-pic-description">
-			<div v-text="currentimage['title']"></div>
-			<div v-text="currentimage['description']"></div>
-		    </div>
-		</div>
-	        <div class="thumbnails">
-		    <div v-for="i in images" class="thumbnail-item">
-			<img :src="path+i.imgName"/>
-			<div class="thumbnail-title-container">
-			    <div class="thumbnail-title" v-text="i.title"></div>
-			</div>
-		    </div>
+	<!-- <script id="slideshow-component" type="x-template">
+	     <div class="slideshow">
+	     <div class="main-pic">
+	     <img :src="path+currentimage['imgName']"/>
+	     <div class="main-pic-description">
+	     <div v-text="currentimage['title']"></div>
+	     <div v-text="currentimage['description']"></div>
+	     </div>
+	     </div>
+	     <div class="thumbnails">
+	     <div v-for="i in images" class="thumbnail-item">
+	     <img :src="path+i.imgName"/>
+	     <div class="thumbnail-title-container">
+	     <div class="thumbnail-title" v-text="i.title"></div>
+	     </div>
+	     </div>
+	     </div>
+	     </div>
+	     </script> -->
+
+	<script id="one-component" type="x-template">
+	    <div class="one-tabs">
+		<div v-for="tab in tabs" class="tab-item">
+		    <div v-text="tab"></div>
 		</div>
 	    </div>
 	</script>
@@ -69,6 +78,8 @@
      background-color: #e5e0e0;
 
  }
+
+ /* slideshow */
  .slideshow {
      display: flex;
      flex-direction: column;
@@ -120,5 +131,25 @@
  .hightlight-thumbnail {
      outline: 3px solid #5ffc96;
  }
+
+ /* tabs-one*/
+ .one-tabs {
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .one-tabs .tab-item {
+     width: 24%;
+     background-color: white;
+     display: table;
+     height: 5%;
+ }
+
+ .one-tabs .tab-item div{
+     display: table-cell;
+     vertical-align: middle;
+     text-align: center;
+ }
+ 
 </style>
 
