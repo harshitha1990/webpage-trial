@@ -172,26 +172,6 @@ $(function() {
 			title: "tab1",
 			imgName: "1.jpg",
 			description: "Hello"
-		    },
-		    {
-			title: "tab1",
-			imgName: "1.jpg",
-			description: "Hello"
-		    },
-		    {
-			title: "tab1",
-			imgName: "1.jpg",
-			description: "Hello"
-		    },
-		    {
-			title: "tab1",
-			imgName: "1.jpg",
-			description: "Hello"
-		    },
-		    {
-			title: "tab1",
-			imgName: "1.jpg",
-			description: "Hello"
 		    }
 		],
 		path: './static/images/'
