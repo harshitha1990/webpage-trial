@@ -98,6 +98,20 @@ $(function() {
 	    }
 	}
     });
+
+     Vue.component('two-component', {
+	template: '#two-component',
+	 props: ["tabs","path"],
+	ready: function() {
+	    this.startSlideShow();
+	},
+	methods: {
+	    startSlideShow: function() {
+		console.log(this.tabs);
+		// alert("worked!!!");
+	    }
+	}
+    });
     
     var demo = new Vue({
 	el: '#main-container',
@@ -126,6 +140,7 @@ $(function() {
 		    },
 		],
 		tabsOne: ["tab1", "tab2", "tab3", "tab4"],
+		tabsTwo: ['1.jpg', '2.jpg'],
 		path: './static/images/'
 	    }
 	},

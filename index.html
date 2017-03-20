@@ -20,7 +20,7 @@
 	     <div>Component {{n}}</div>
 	     </script> -->
 	<div id="main-container">
-	    <div class="top-container">
+	    <div class="top-container separate-areas">
 		<div class="slideshow-container">
 		    <slideshow-component :images="images"
 					 :currentimage="getDefaultImage()"
@@ -33,10 +33,12 @@
 		</div>
 	    </div>
 	    <div class="bottom-container">
-		<div class="container-one">
+		<div class="container-one separate-areas">
 		    <one-component :tabs="tabsOne"></one-component>
 		</div>
 		<div class="container-two">
+		    <two-component :tabs="tabsTwo"
+				   :path="path"></two-component>
 		</div>
 		<div class="container-three">
 		</div>
@@ -64,11 +66,19 @@
 	</script>
 
 	<script id="one-component" type="x-template">
-	    <div class="one-tabs">
-		<div v-for="tab in tabs" class="tab-item">
-		    <div v-text="tab"></div>
-		</div>
-	    </div>
+	 <div class="one-tabs">
+	 <div v-for="tab in tabs" class="one-tab-item">
+	 <div v-text="tab"></div>
+	 </div>
+	 </div>
+	</script>
+
+	<script id="two-component" type="x-template">
+	 <div class="two-tabs">
+	 <div v-for="tab in tabs" class="two-tab-item">
+	 <img :src="path+tab"/>
+	 </div>
+	 </div>
 	</script>
     </body>
 </html>
@@ -79,10 +89,12 @@
 
  }
 
+ .separate-areas {
+     margin-bottom: 5px;
+ }
  /* slideshow */
  .top-container {
      height: 50%;
-     margin-bottom: 5px;
  }
  .bottom-container {
      height: 50%;
@@ -145,17 +157,28 @@
      justify-content: space-between;
  }
 
- .one-tabs .tab-item {
+ .one-tabs .one-tab-item {
      width: 24.5%;
      background-color: white;
      display: table;
      height: 10%;
  }
 
- .one-tabs .tab-item div{
+ .one-tabs .one-tab-item div{
      display: table-cell;
      vertical-align: middle;
      text-align: center;
+ }
+
+ /* tabs-two */
+ .two-tabs {
+     display: flex;
+     justify-content: space-between;
+ }
+ 
+ .two-tabs .two-tab-item img{
+     width: 99.5%;
+     height:35%;
  }
  
 </style>
