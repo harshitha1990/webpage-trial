@@ -19,6 +19,10 @@
 		    </slideshow-component>
 		</div>
 		<div class="news-container">
+		    <news-component :tabs="news"
+				   :path="path">
+			
+		    </news-component>
 		</div>
 	    </div>
 	    <div class="bottom-container">
@@ -89,6 +93,15 @@
 		</div>
 	    </div>
 	</script>
+
+	<script id="news-component" type="x-template">
+	    <div class="news-tabs">
+		<div v-for="tab in tabs" class="news-tab-item">
+		    <div v-text="tab.description"></div>
+		    <img :src="path+tab.imgName" v-on:click="startSlideShow($event)" :id="tab"/>
+		</div>
+	    </div>
+	</script>
     </body>
 </html>
 <style>
@@ -102,9 +115,17 @@
  /* slideshow */
  .top-container {
      height: 70%;
+     display: flex;
  }
  .bottom-container {
      height: 30%;
+ }
+ .slideshow-container {
+     width: 80%;
+ }
+ .news-container {
+     width: 25%;
+     margin-left: 5px;
  }
  .slideshow {
      display: flex;
@@ -157,7 +178,29 @@
  .hightlight-thumbnail {
      outline: 3px solid #5ffc96;
  }
+ /* news container*/
+ .news-tabs {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+ }
 
+ .news-tabs .news-tab-item {
+     margin-top: 5px;
+     display: flex;
+     height: 10%;
+     background-color: white;
+     align-items: center;
+     text-align: center;
+ }
+ .news-tabs .news-tab-item div {
+     width: 75%;
+ }
+ .news-tabs img {
+     height: 99%;
+     width: 20%;
+ }
+ 
  /* tabs-one*/
  .one-tabs {
      display: flex;

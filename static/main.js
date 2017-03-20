@@ -83,6 +83,18 @@ $(function() {
 	}
     });
 
+    Vue.component('news-component', {
+	template: '#news-component',
+	 props: ["tabs","path"],
+	methods: {
+	    startSlideShow: function(event) {
+		var self = this;
+		var ev = $(event.target)
+		showPopup($(ev).attr("src"));
+	    }
+	}
+     });
+
   
     var demo = new Vue({
 	el: '#main-container',
@@ -129,6 +141,53 @@ $(function() {
 			description: "Hello"
 		    },
 		    {
+			title: "tab4",
+			imgName: "1.jpg",
+			description: "Hello"
+		    }
+		],
+		news: [
+		    {
+			title: "tab1",
+			imgName: "1.jpg",
+			description: "Hello"
+		    },
+		    {
+			title: "tab2",
+			imgName: "1.jpg",
+			description: "Hello"
+		    },
+		    {
+			title: "tab3",
+			imgName: "1.jpg",
+			description: "Hello"
+		    },
+		    {
+			title: "tab4",
+			imgName: "1.jpg",
+			description: "Hello"
+		    },
+		     {
+			title: "tab1",
+			imgName: "1.jpg",
+			description: "Hello"
+		    },
+		    {
+			title: "tab2",
+			imgName: "1.jpg",
+			description: "Hello"
+		    },
+		    {
+			title: "tab3",
+			imgName: "1.jpg",
+			description: "Hello"
+		    },
+		    {
+			title: "tab4",
+			imgName: "1.jpg",
+			description: "Hello"
+		    },
+		     {
 			title: "tab4",
 			imgName: "1.jpg",
 			description: "Hello"
