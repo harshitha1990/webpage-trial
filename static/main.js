@@ -88,7 +88,7 @@ $(function() {
 
     Vue.component('one-component', {
 	template: '#one-component',
-	props: ["tabs", "showdropdown"],
+	props: ["tabs"],
 	ready: function() {
 	    this.startSlideShow();
 	},
@@ -109,6 +109,17 @@ $(function() {
 	    startSlideShow: function() {
 		console.log(this.tabs);
 		// alert("worked!!!");
+	    }
+	}
+     });
+
+    Vue.component('third-component', {
+	template: '#third-component',
+	 props: ["tabs","path"],
+	methods: {
+	    startSlideShow: function(event) {
+		var id = event.target.id;
+		$("#"+ id + "-content").slideToggle("slow");
 	    }
 	}
     });
@@ -141,7 +152,48 @@ $(function() {
 		],
 		tabsOne: ["tab1", "tab2", "tab3", "tab4"],
 		tabsTwo: ['1.jpg', '2.jpg'],
-		tabsThree: ["tab1", "tab2", "tab3", "tab4","tab5", "tab6", "tab7", "tab8"],
+		tabsThree: [
+		    {
+			title: "tab1",
+			imgName: "1.jpg",
+			description: "Hello"
+		    },
+		    {
+			title: "tab1",
+			imgName: "1.jpg",
+			description: "Hello"
+		    },
+		    {
+			title: "tab1",
+			imgName: "1.jpg",
+			description: "Hello"
+		    },
+		    {
+			title: "tab1",
+			imgName: "1.jpg",
+			description: "Hello"
+		    },
+		    {
+			title: "tab1",
+			imgName: "1.jpg",
+			description: "Hello"
+		    },
+		    {
+			title: "tab1",
+			imgName: "1.jpg",
+			description: "Hello"
+		    },
+		    {
+			title: "tab1",
+			imgName: "1.jpg",
+			description: "Hello"
+		    },
+		    {
+			title: "tab1",
+			imgName: "1.jpg",
+			description: "Hello"
+		    }
+		],
 		path: './static/images/'
 	    }
 	},

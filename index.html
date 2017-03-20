@@ -34,7 +34,7 @@
 	    </div>
 	    <div class="bottom-container">
 		<div class="container-one">
-		    <one-component :tabs="tabsOne" :showdropdown="false">
+		    <one-component :tabs="tabsOne">
 		    </one-component>
 		</div>
 		<div class="container-two">
@@ -44,7 +44,7 @@
 		    </two-component>
 		</div>
 		<div class="container-three">
-		    <one-component :tabs="tabsThree" :showdropdown="true"></one-component>
+		    <third-component :tabs="tabsThree" :path="path"></third-component>
 		</div>
 	    </div>
 	</div>
@@ -79,10 +79,22 @@
 
 	<script id="two-component" type="x-template">
 	 <div class="two-tabs">
-	 <div v-for="tab in tabs" class="two-tab-item">
-	 <img :src="path+tab"/>
+	     <div v-for="tab in tabs" class="two-tab-item">
+		 <img :src="path+tab"/>
+	     </div>
 	 </div>
-	 </div>
+	</script>
+
+	<script id="third-component" type="x-template">
+	    <div class="third-tabs">
+		<div v-for="tab in tabs" class="third-tab-item">
+		    <div v-text="tab.title" :id="'item'+$index" class="center-tab" v-on:click="startSlideShow($event)"></div>
+		    <div :id="'item'+$index+'-content'" class="hide-details">
+			<img :src="path+tab.imgName"/>
+			<div v-text="tab.description"></div>
+		    </div>
+		</div>
+	    </div>
 	</script>
     </body>
 </html>
@@ -191,9 +203,29 @@
      height:60%;
  }
 
- .container-three .one-tab-item {
+ /* tabs-three */
+ .third-tabs {
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+ }
+
+ .third-tabs .third-tab-item {
+     width: 24.5%;
      background-color: black;
+     display: table;
+     height: 10%;
+     margin-top: 5px;
      color: white;
+ }
+
+ .third-tabs .third-tab-item .center-tab{
+     display: table-cell;
+     vertical-align: middle;
+     text-align: center;
+ }
+ .hide-details {
+     display: none;
  }
  
 </style>
