@@ -2,6 +2,7 @@ $(function() {
     $(".popup img").attr("src", "./static/images/1.jpg");
     $(".popup").css("visibility", "hidden");
     $(".close").click(function() {
+	$(".container-two img").removeClass("hightlight-thumbnail");
 	$(".popup").hide();
     })
     var showPopup = function(imgName) {
@@ -63,7 +64,10 @@ $(function() {
 	methods: {
 	    startSlideShow: function(event) {
 		var self = this;
-		showPopup($(event.target).attr("src"));
+		$(".container-two img").removeClass("hightlight-thumbnail");
+		var ev = $(event.target)
+		$(ev).addClass("hightlight-thumbnail");
+		showPopup($(ev).attr("src"));
 	    }
 	}
      });
