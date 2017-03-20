@@ -159,17 +159,17 @@ $(function() {
 			description: "Hello"
 		    },
 		    {
-			title: "tab1",
+			title: "tab2",
 			imgName: "1.jpg",
 			description: "Hello"
 		    },
 		    {
-			title: "tab1",
+			title: "tab3",
 			imgName: "1.jpg",
 			description: "Hello"
 		    },
 		    {
-			title: "tab1",
+			title: "tab4",
 			imgName: "1.jpg",
 			description: "Hello"
 		    }
